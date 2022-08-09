@@ -1,0 +1,51 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:slategrey;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 400px;
+    background-color: aliceblue;
+    padding: 16px;
+    border-radius: 3%;
+    gap: 8px;
+}
+.display{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 32px;
+    background-color: darkolivegreen;
+    padding: 8px;
+    font-size: large;
+}
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1;
+
+}
+.numberContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex: 1;
+}
+button{
+    height: 88px;
+    width: 88px;
+
+}
+.operatorContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
