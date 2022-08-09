@@ -28,24 +28,34 @@ body{
 .buttonContainer{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     flex: 1;
 
 }
 .numberContainer{
     display: flex;
     flex-wrap: wrap;
+    justify-content: end;
     align-content: center;
-    flex: 1;
 }
 button{
     height: 88px;
     width: 88px;
-
 }
 .operatorContainer{
     display: flex;
     align-items: center;
-    flex-direction: column;
     flex-wrap: wrap;
+    flex-grow: 1;
+    padding-right: 16px;
+}
+.clearButton{
+    height: 32px;
+    width: 88px;
+}
+.clearContainer{
+    display: flex;
+    justify-content: start;
+    padding-left: 24px;
+    padding-top: 24px;
 }
