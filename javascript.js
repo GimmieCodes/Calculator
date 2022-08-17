@@ -31,7 +31,7 @@ let b = 0
 const clear = document.querySelector(".clearButton")
 clear.addEventListener("click", () =>{
     display.textContent = ""
-    return a = 0, b = 0, i = 1
+    return a = 0, b = 0, countdown(true)
 })
 
 const one = document.querySelector("#one");
@@ -212,13 +212,26 @@ function result(){
     b = parseFloat(display.textContent)
     a = display.textContent = operate(operator,a,b)
     if (isNaN(a)){
-        display.textContent = "This Caluclator will now self destruct in 30 seconds..."
+        countdown()
+        display.textContent = `This Caluclator will now self destruct in 10 seconds...`
     }
     console.log(a)
     removeSelected()
 }
 
-
+function countdown(stop){
+    let timeLeft = 10
+    let timer = setInterval(function(){
+        timeLeft--;
+        console.log(timeLeft)
+        display.textContent = `This Caluclator will now self destruct in ${timeLeft} seconds...`
+        if (timeLeft <= 0){
+            clearInterval(timer)
+            window.location.href = "https://www.youtube.com/watch?v=CCoXNIM7SBY&ab_channel=TheDirectorate"
+        }
+    },1000)
+}
+ 
 
 
 
