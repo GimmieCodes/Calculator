@@ -31,7 +31,7 @@ let b = 0
 const clear = document.querySelector(".clearButton")
 clear.addEventListener("click", () =>{
     display.textContent = ""
-    return a = 0, b = 0, countdown(true)
+    return a = 0, b = 0
 })
 
 const one = document.querySelector("#one");
@@ -232,7 +232,6 @@ function countdown(stop){
     },1000)
 }
  
-
 
 
 
