@@ -25,8 +25,8 @@ function operate (operator,a,b){
         return division(a,b)
     }
 }
-a = 0
-b = 0
+let a = 0
+let b = 0
 
 const clear = document.querySelector(".clearButton")
 clear.addEventListener("click", () =>{
@@ -40,6 +40,7 @@ one.addEventListener('click', () =>{
         display.textContent += 1
         }
         else{
+            removeSelected()
             display.textContent = "1"
         }
 })
@@ -49,6 +50,7 @@ two.addEventListener('click', () =>{
         display.textContent += 2
         }
         else{
+            removeSelected()
             display.textContent = "2"
         }
 })
@@ -58,6 +60,7 @@ three.addEventListener('click', () =>{
     display.textContent += 3
     }
     else{
+        removeSelected()
         display.textContent = "3"
     }
 })
@@ -67,6 +70,7 @@ four.addEventListener('click', () =>{
         display.textContent += 4
         }
         else{
+            removeSelected()
             display.textContent = "4"
         }
 })
@@ -76,6 +80,7 @@ five.addEventListener('click', () =>{
         display.textContent += 5
         }
         else{
+            removeSelected()
             display.textContent = "5"
         }
 })
@@ -85,6 +90,7 @@ six.addEventListener('click', () =>{
         display.textContent += 6
         }
         else{
+            removeSelected()
             display.textContent = "6"
         }
 })
@@ -134,12 +140,19 @@ decimel.addEventListener('click', () =>{
         }
 })
 
+function removeSelected(){
+        plus.classList.remove("selected")
+        times.classList.remove("selected")
+        minus.classList.remove("selected")
+        divide.classList.remove("selected")
 
+}
 
 const plus = document.querySelector("#plus");
 plus.addEventListener('click', () =>{
     if (a == 0){
     a = parseFloat(display.textContent)
+    plus.classList.add("selected")
     console.log(a)
     }else{
         result()
@@ -156,10 +169,12 @@ const minus = document.querySelector("#minus");
 minus.addEventListener('click', () =>{
     if (a == 0){
         a = parseFloat(display.textContent)
+        minus.classList.add("selected")
         console.log(a)
         }else{
             result()
         }
+        minus.classList.add("selected")
         operator = subtract
 })
 
@@ -167,22 +182,26 @@ const times = document.querySelector("#times");
 times.addEventListener('click', () =>{
     if (a == 0){
         a = parseFloat(display.textContent)
+        times.classList.add("selected")
         console.log(a)
         }else{
             result()
         }
         operator = multiply
+        times.classList.add("selected")
 })
 
 const divide = document.querySelector("#divide");
 divide.addEventListener('click', () =>{
     if (a == 0){
         a = parseFloat(display.textContent)
+        divide.classList.add("selected")
         console.log(a)
         }else{
             result()
         }
         operator = division
+        divide.classList.add("selected")
 })
 
 const equal = document.querySelector("#equal");
@@ -192,6 +211,11 @@ equal.addEventListener('click', () =>{
 function result(){
     b = parseFloat(display.textContent)
     a = display.textContent = operate(operator,a,b)
+    if (isNaN(a)){
+        display.textContent = "This Caluclator will now self destruct in 30 seconds..."
+    }
+    console.log(a)
+    removeSelected()
 }
 
 
